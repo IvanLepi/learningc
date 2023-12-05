@@ -1,0 +1,48 @@
+Types -- EVERYTHING IS A NUMBER --
+
+BASIC DATA TYPES
+
+char    1 byte ( 8 bits ) - one ascii character "f"
+int     4 byte ( 32 bits) - one number 		"1"
+float   4 byte ( 32 bits) - floating point num  "3.41232"
+double  8 byte ( 64 bits) - floating point num  "3.412328239429"
+
+char 8 bits = 2^8 possibilities aka 256. from 00000000 to 11111111.
+int 32 bits = 4.2 billions
+short <= int <= long
+
+--- IEEE Standard ---
+float 32 bits -->
+	p1 = 3.141592 --> 
+	1 bit (sign) | 8 bits (exponent) | 23 bits (mantissa)
+
+double 64 bits -->
+	p2 = 3.141592653589793 -->
+	1 bit (sign) | 11 bits (exponent) | 52 bits (mantissa)
+
+
+FORMATTING
+
+%c - character
+%d - decimal number
+%o - octal number
+%u - unasigned decimal number
+%x - unasigned hexadecimal
+%f - decimal floating
+%e - scientific notation
+%g - pickes the shorter of %e or %f
+%s - string prints untill '\0'
+%% prints %
+
+DECIMAL FORMATTING
+
+%f   - default: shows 6 decimal places
+%.nf - shows n decimal places
+%mf  - prints with minimum width m
+%m.nf- n decimal places and m minimum width m
+
+ESCAPE CHARACTERS
+
+\n - prints new line
+\t - tab
+\\ - prints '\'
