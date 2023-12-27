@@ -1,5 +1,5 @@
 /*
-* Make - Building large programs
+Make - Building large programs
 */
 
 Tool for building large programs
