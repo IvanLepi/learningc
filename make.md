@@ -1,10 +1,9 @@
-/*
-Make - Building large programs
-*/
+
+# Make - Building large programs
 
 Tool for building large programs
 
-Specifics:
+## Specifics:
 Targets : Things to build
 Dependencies : input to build targets from
 Recipes : To build a target from what it depends on 
@@ -28,7 +27,7 @@ Even worse, many real programs need to be compiled by other people -
 whether that is multiple members of a dev team or people you distribute 
 the program to. Providing a Makefile allows everyone to build a program
 simply by typing make.
-
+```
 myProgram: oneFile.o anotherFile.o
     gcc -o myProgram oneFile.o anotherFile.o
 oneFile.o: oneFile.c oneHeader.h someHeader.h
@@ -43,19 +42,20 @@ oneFile.o: oneFile.c oneHeader.h someHeader.h
     gcc $(CFLAGS) -c oneFile.c
 anotherFile.o: anotherFile.o anotherHeader.h someHeader.h
     gcc -$(CFLAGS)-c anotherFile.c
-
-Clean
+```
+## Clean
 A common target to put in a makefile is a clean target.
 Target is intended to remove the compiled program, all obj files, all
 editor backups, and any other files you might consider to be cluter.
 This target is used to either force the program to be rebuilt or you 
 just need to clean up the directory leaving only the source files.
+```
 .PHONY: clean
 clean: 
     rm -f myProgram  *.o *.c~ *.h~
-
-Generic rules
-
+```
+## Generic rules
+```
 CC = gcc
 CFLAGS=-std=gnu99 -pedantic -Wall
 myProgram: oneFile.o anotherFile.o
@@ -68,10 +68,10 @@ depend:
 #DONOTDELETE
 anotherFile.o anotherHeader.h someHeader.h
 oneFile.o oneHeader.h someHeader.h
-
-Built in functions
+```
+## Built in functions
 Building optimized and debug object files.
-
+```
 CC = gcc
 CFLAGS=-std=gnu99 -pedantic -Wall
 DBFLAGS=-std=gnu99 -pedantic -Wall -ggdb3 -DDEBUG
@@ -94,6 +94,7 @@ depend:
 #DO NOT DELETE
 anotherFile.o anotherHeader.h someHeader.h
 oneFile.o oneHeader.h someHeader.h
-
-
+```
+```
 gcc -Wall -Wsign-compare -Wwrite-strings Wtype-limits -Werror
+```
